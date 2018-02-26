@@ -1,10 +1,20 @@
-# Version 1.0, Becky Arnold, January 2018 running on python version 2.7.13
+# Version 1.0, Becky Arnold, February 2018 running on python version 2.7.13
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
 import math
-import fort_subroutines
-import github_correct_dv
+import correct_dv
+# Import the subroutines written in fortan
+try:
+    import fort_subroutines
+except ImportError as failed_import:
+    print('\n\n', failed_import)
+    print ('Likely cause: running the code with python 3 or later.')
+    print('Suggest running with python 2.7.\n\n')
+    import sys
+    sys.exit()
+
+
 
 
 '''
