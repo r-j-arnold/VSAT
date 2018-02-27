@@ -1,7 +1,16 @@
 import numpy as np
 from scipy.stats.kde import gaussian_kde
-import fort_subroutines
+# Import the subroutines written in fortran
+try:
+    import fort_subroutines
+except ImportError as failed_import:
+    print('\n\n', failed_import)
+    print ('Likely cause: running the code with python 3 or later.')
+    print('Suggest running with python 2.7.\n\n')
+    import sys
+    sys.exit()
 
+    
 '''
 Observational errors artificially increase the observed mean
 dv because they broaden the observed velocity distribution.
