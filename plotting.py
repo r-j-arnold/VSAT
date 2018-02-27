@@ -65,7 +65,7 @@ def col_code_plot(n_stars, r, edges, count_stars_bins, dr_start, dr_end):
         count_stars_range = [sum([count_stars_bins[a_bin][star] for a_bin in bin_range]) for star in range(n_stars)]
 
         # Set a colourmap
-        cm = plt.cm.get_cmap('rainbow')
+        cm = plt.cm.get_cmap('viridis')
 
         # Plot the colour coded stars
         plt.scatter(r[0], r[1], c=count_stars_range, alpha=0.8, cmap=cm, s=3.)

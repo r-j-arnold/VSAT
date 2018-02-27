@@ -64,6 +64,6 @@ def read_data(path_to_data):
     # To test uncomment one and run main.py.
     # Ensure error_flag is set to True in parameters.py.
     # n_stars, r, v, verr = test_1()
-    # n_stars, r, v, verr = test_2()
+    n_stars, r, v, verr = test_2()
 
     return n_stars, r, v, verr
