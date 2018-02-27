@@ -17,7 +17,7 @@ def set_parameters():
     # Parameters the user may wish to specify, or can leave at the
     # default values
 
-    # dr to colour code
+    # Range of dr to colour code stars by in figure 2.
     dr_start = 0.
     dr_end = 1.
 

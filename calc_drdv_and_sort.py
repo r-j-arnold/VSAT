@@ -93,7 +93,7 @@ rid of bins at high dr.
 
 Also get rid of any empty bins.
 '''
-def tidy_up(n_bins, edges, mean_dv, error, n_in_bins):
+def tidy_up(n_bins, edges, mean_dv, error, n_in_bins, count_stars_bins):
 
     # Get rid of high dv bins.
     # Define high dr as the dr beyond which the average number of pairs per
@@ -117,6 +117,7 @@ def tidy_up(n_bins, edges, mean_dv, error, n_in_bins):
     mean_dv = mean_dv[:cutoff_bin]
     error = error[:cutoff_bin]
     n_in_bins = n_in_bins[:cutoff_bin]
+    count_stars_bins = count_stars_bins[:cutoff_bin]
 
     # The number of bins has changed now the outermost have been cut.
     # Recalculate.
@@ -139,12 +140,13 @@ def tidy_up(n_bins, edges, mean_dv, error, n_in_bins):
         mean_dv = np.delete(mean_dv, empty)
         error = np.delete(error, empty)
         n_in_bins = np.delete(n_in_bins, empty)
+        count_stars_bins = np.delete(count_stars_bins, empty)
 
     # The number of bins has changed now the empty ones have been
     # deleted. Recalculate.
     n_bins = len(edges)
 
-    return n_bins, edges, mean_dv, error, n_in_bins
+    return n_bins, edges, mean_dv, error, n_in_bins, count_stars_bins
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -164,6 +166,6 @@ def calc_drdv_and_sort(n_stars, r, v, verr, error_flag, dv_default, bin_width):
 
     edges, n_bins, mean_dv, error, n_in_bins, count_stars_bins = sort_into_bins(n_stars, n_pairs, dr_dv, max_dr, bin_width, error_flag)
 
-    n_bins, edges, mean_dv, error, n_in_bins = tidy_up(n_bins, edges, mean_dv, error, n_in_bins)
+    n_bins, edges, mean_dv, error, n_in_bins, count_stars_bins = tidy_up(n_bins, edges, mean_dv, error, n_in_bins, count_stars_bins)
 
     return n_bins, edges, mean_dv, error, n_in_bins, count_stars_bins
