@@ -52,7 +52,7 @@ def calc_dr_dv(n_stars, r, v, verr, error_flag, dv_default, bin_width):
         for pair in range(n_pairs):
             
             if (abs(dr_dv[pair][0]) < 0.00001) or (abs(dr_dv[pair][1]) < 0.00001) or (abs(dr_dv[pair][2]) < 0.00001):
-                print 'duplict'
+                
                 remove_list.append(pair)
                 
     else:
