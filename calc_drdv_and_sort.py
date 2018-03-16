@@ -45,8 +45,35 @@ def calc_dr_dv(n_stars, r, v, verr, error_flag, dv_default, bin_width):
     '''
     if error_flag:
         dr_dv, max_dr = fort_subroutines.calc_dr_dv(n_stars, n_pairs, bin_width, len(r), r, len(v), v, error_flag, dv_default, verr)
+
+        # Remove any pairs with exacly 0 dr, dv, or error.
+        # These pairs will be very rare, and they screw up the error calculation
+        remove_list = []
+        for pair in range(n_pairs):
+            
+            if (abs(dr_dv[pair][0]) < 0.00001) or (abs(dr_dv[pair][1]) < 0.00001) or (abs(dr_dv[pair][2]) < 0.00001):
+                print 'duplict'
+                remove_list.append(pair)
+                
     else:
         dr_dv, max_dr = fort_subroutines.calc_dr_dv(n_stars, n_pairs, bin_width, len(r), r, len(v), v, error_flag, dv_default)
+
+        # Remove any pairs with exacly dr or dv.
+        # These pairs will be very rare, and they screw up the error calculation
+        remove_list = []
+        for pair in range(n_pairs):
+            
+            if (abs(dr_dv[pair][0]) < 0.00001) or (abs(dr_dv[pair][1]) < 0.00001):
+                
+                remove_list.append(pair)
+
+    #Remove the zero pairs
+    remove_list.reverse()
+    for remove in remove_list:
+
+        dr_dv = np.delete(dr_dv, (remove), axis=0)
+
+    n_pairs = len(dr_dv)
 
     return n_pairs, dr_dv, max_dr
 
