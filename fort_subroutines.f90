@@ -147,7 +147,7 @@ subroutine calc_dr_dv(n_stars, n_pairs, bin_width, rdim, r, vdim, v, error_flag,
            !How the error is calculated depends on how dv is defined
            if (dv_default) then
         
-              !Get the error on dv if dv is calculated with the default definition.
+              !Get the error on dv if dv is calculated with the default definition
 
               !You can work through the maths, but in 2D it's:
               !sqrt(  ((v1x - v2x)^2 * (err_v1x^2 + err_v2x^2)) + ((v1y - v2y)^2 * (err_v1y^2 + err_v2y^2))  )

@@ -26,23 +26,6 @@ def test_2():
 
     return n_stars, r, v, verr
 
-# Test 2 generates data with linear velocity structure (distance between
-# stars is linearly proportional to their velocity distance). The
-# velocity structure shown in figure 1 should be linearly increasing.
-def test_3():
-
-    n_stars = 1000
-    r = [[np.random.normal() for i in range(n_stars)] for j in range(3)]
-    v = [[r[j][i] for i in range(n_stars)] for j in range(3)]
-    for coord in range(3):
-        v[coord][-5] = v[coord][10]
-        v[coord][-15] = v[coord][12]
-        v[coord][-25] = v[coord][14]
-
-    verr = [[np.random.uniform(0.5, 1.) for i in range(n_stars)] for j in range(3)]
-
-    return n_stars, r, v, verr
-
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -81,6 +64,6 @@ def read_data(path_to_data):
     # To test uncomment one and run main.py.
     # Ensure error_flag is set to True in parameters.py.
     # n_stars, r, v, verr = test_1()
-    n_stars, r, v, verr = test_3()
+    n_stars, r, v, verr = test_2()
 
     return n_stars, r, v, verr
