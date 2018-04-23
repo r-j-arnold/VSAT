@@ -72,6 +72,7 @@ def col_code_plot(n_stars, r, edges, count_stars_bins, dr_start, dr_end):
 
         # Add a colourbar
         plt.colorbar()
+        cbar.set_label('Counts', rotation=270, labelpad=20)
 
         # Add axis labels, etc
         plt.xlabel('x (pc)')
