@@ -71,7 +71,7 @@ def col_code_plot(n_stars, r, edges, count_stars_bins, dr_start, dr_end):
         plt.scatter(r[0], r[1], c=count_stars_range, alpha=0.8, cmap=cm, s=3.)
 
         # Add a colourbar
-        plt.colorbar()
+        cbar = plt.colorbar()
         cbar.set_label('Counts', rotation=270, labelpad=20)
 
         # Add axis labels, etc
