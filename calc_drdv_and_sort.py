@@ -130,10 +130,10 @@ def tidy_up(n_bins, edges, mean_dv, error, n_in_bins, count_stars_bins):
         # Get the average number of pairs per bin for bins with dr >= this one
         av_numb_in_bins = sum(n_in_bins[i:])/float(n_bins - i)
 
-        # It the average number of pairs per bin is < 10 then the bins
+        # It the average number of pairs per bin is < 30 then the bins
         # beyond this point are likely noisy and unreliable
         # Therefore want to cut any bins beyond this cutoff point
-        if av_numb_in_bins < 10:
+        if av_numb_in_bins < 30:
 
             cutoff_bin = i
 
