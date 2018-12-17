@@ -4,8 +4,8 @@ Description
 ---
 
 VSAT is a tool for analysing velocity structure in star clusters/associations 
-following the method described in Arnold et al. (2018) 
-(submitted). In short, for every possible pair of stars the distance
+following the method described in Arnold & Goodwin (2018) 
+(accepted). In short, for every possible pair of stars the distance
 between them (dr) and their velocity difference (dv) is calculated.
 Pairs are then sorted into dr bins. In each bin the mean dv of
 the pairs it contains is calculated. These mean dvs are plotted
