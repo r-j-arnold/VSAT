@@ -17,10 +17,10 @@ shows a 2D projection of the stars. The stars are colour coded according to
 how often they appear in user-specified dr bins. Understanding which stars
 contribute most heavily to different parts of the velocity structure is
 often helpful for interpreting it. This is described in more detail in
-Arnold et al. (2018) (in prep).
+[Arnold & Goodwin (2018)](https://doi.org/10.1093/mnras/sty3409).
 
 This program is not dependent on the units of the data inputted,
-although pc and km/s although are assumed and used to label figure
+although pc and km/s are assumed and used to label figure
 axes.
 
 Structure of the program
