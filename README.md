@@ -1,5 +1,7 @@
 # Velocity Structure Analysis Tool (VSAT)
 
+[![DOI](https://zenodo.org/badge/122964852.svg)](https://zenodo.org/badge/latestdoi/122964852)
+
 Description
 ---
 
